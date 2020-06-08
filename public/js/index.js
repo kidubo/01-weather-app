@@ -1,4 +1,4 @@
-//  import { response } from "express"
+//   import { response } from "express"
 
 console.log('client side javascript was added to the application')
 
@@ -13,16 +13,17 @@ weatherForm.addEventListener('submit',(e)=>{
 
     const location = search.value
 
-    message1.textContent = 'Loading........'
+    message1.textContent = 'Loading....'
     message2.textContent = ''
 
 
 
 
-    fetch('http://localhost:5000/weather?address=' + location).then((response)=>{
+    fetch('/weather?address=' + location).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                  message1.textContent = data.error
+
             }else{
 
                 message1.textContent = data.location

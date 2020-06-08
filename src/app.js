@@ -11,6 +11,7 @@ const forecast = require('./utils/forecast')
 //console.log(__filename)
 
 const app = express()
+const port = process.env.PORT || 5000
 
 //Define path for express config
 const publicDrPath = path.join(__dirname, '../public')
@@ -102,6 +103,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(5000, ()=>{
-    console.log('server is up and runing!')
+app.listen(port, ()=>{
+    console.log('server is up and runing on port' + port)
 }) 
